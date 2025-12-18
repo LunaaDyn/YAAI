@@ -12,6 +12,7 @@ h1 {
 	justify-self: center;
 	letter-spacing: 5px;
 	color: var(--secondary);
+	user-select: none;
 }
 section {
 	border: 5px solid var(--secondary);
@@ -29,6 +30,7 @@ section {
 img {
 	width: 5rem;
 	height: 5rem;
+	user-select: none;
 }
 
 button {
