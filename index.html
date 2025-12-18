@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>You Are An Idiot !</title>
+		<link rel="stylesheet" href="YAAI.css" />
+		<link rel="icon" type="image/x-icon" href="Images/Idiot-white.png" />
+	</head>
+	<body>
+		<section>
+			<div><h1>you are an idiot</h1></div>
+			<div class="img">
+				<img src="Images/Idiot-white.png" alt="YOU ARE AN IDIOT" /><img
+					src="Images/Idiot-white.png"
+					alt="YOU ARE AN IDIOT"
+				/><img src="Images/Idiot-white.png" alt="YOU ARE AN IDIOT" />
+			</div>
+		</section>
+		<button></button>
+		<script>
+			var audio = new Audio("Audio/YAAI.mp3");
+			audio.loop = true;
+			let $btn = document.querySelector("button");
+			let $imgs = document.querySelector(".img");
+			let black = `<img src="Images/Idiot-black.png" alt="YOU ARE AN IDIOT" /><img
+					src="Images/Idiot-black.png"
+					alt="YOU ARE AN IDIOT"
+				/><img src="Images/Idiot-black.png" alt="YOU ARE AN IDIOT" />`;
+			let white = `<img src="Images/Idiot-white.png" alt="YOU ARE AN IDIOT" /><img
+					src="Images/Idiot-white.png"
+					alt="YOU ARE AN IDIOT"
+				/><img src="Images/Idiot-white.png" alt="YOU ARE AN IDIOT" />`;
+			let boolean = true;
+
+			$btn.addEventListener("click", () => {
+				audio.currentTime = 0;
+				audio.play();
+			});
+
+			for (let i = 1; i < 99999; i++) {
+				setTimeout(() => {
+					console.log("jaj");
+					changeColor();
+				}, i * 326.1);
+			}
+
+			function changeColor() {
+				if (boolean == true) {
+					$imgs.innerHTML = black;
+
+					document.documentElement.style.setProperty("--primary", "#000000");
+					document.documentElement.style.setProperty("--secondary", "#ffffff");
+					boolean = false;
+				} else {
+					$imgs.innerHTML = white;
+
+					document.documentElement.style.setProperty("--primary", "#ffffff");
+					document.documentElement.style.setProperty("--secondary", "#000000");
+					boolean = true;
+				}
+			}
+		</script>
+	</body>
+</html>
