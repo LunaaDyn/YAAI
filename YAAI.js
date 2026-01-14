@@ -17,12 +17,9 @@ $btn.addEventListener("click", () => {
 	audio.play();
 });
 
-for (let i = 1; i < 99999; i++) {
-	setTimeout(() => {
-		console.log("jaj");
-		changeColor();
-	}, i * 326.1);
-}
+setInterval(() => {
+	changeColor();
+}, 326.1);
 
 function changeColor() {
 	if (boolean == true) {
